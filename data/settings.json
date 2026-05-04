@@ -1,0 +1,6 @@
+{
+  "preferredHourTallinn": 22,
+  "note": "Vercel Pro cron is configured to run every 60 minutes. Hour preference is retained only as an operator note.",
+  "mode": "hourly",
+  "updatedAt": "2026-05-04T14:25:03.697Z"
+}

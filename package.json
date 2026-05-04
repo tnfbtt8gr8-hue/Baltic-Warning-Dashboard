@@ -1,0 +1,11 @@
+{
+  "name": "baltic-warning-dashboard-static",
+  "version": "4.0.2",
+  "private": true,
+  "description": "Vercel-ready Baltic warning dashboard v4.0.2 with Decision Board, Collection Workshop, ontology model, 1-5 confidence scoring, NAI/LTIOV collection logic and zoomable operational map layer.",
+  "scripts": {
+    "check": "node --check assets/app.js && node --check api/health.js && node --check api/ccir.js && node --check api/pirs.js && node --check api/sirs.js && node --check api/indicators.js && node --check api/collection-sirs.js && node --check api/ffirs.js && node --check api/nais.js && node --check api/map-countries.js && node --check api/serious-incident-reports.js && node --check api/sources.js && node --check api/red-flags.js && node --check api/signals.js && node --check api/assessments/latest.js && node --check api/settings.js && node --check api/test-systems.js && node --check api/crawlers/run.js && node --check api/crawlers/run-all.js && node --check api/custom-crawlers.js && node --check api/_lib/seed.js && node --check api/_lib/store.js && node --check api/_lib/risk.js && node --check api/_lib/crawlers.js && node --check api/_lib/service.js",
+    "serve": "python3 -m http.server 3000",
+    "build": "npm run check"
+  }
+}

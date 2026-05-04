@@ -1,0 +1,14 @@
+{
+  "score": 0,
+  "label": "GREEN",
+  "summary": "Baseline: only scattered signals are visible and no critical overlap is currently derived from the engine.",
+  "summaryEt": "Baasjoon: nähtavad on vaid hajusad signaalid ja mootor ei tuleta praegu kriitilist kattuvust.",
+  "updatedAt": "2026-05-04T13:32:55.586Z",
+  "activeFlagIds": [],
+  "rationale": [
+    "No active red flags derived from current signals."
+  ],
+  "rationaleEt": [
+    "Kogutud signaalidest ei tuletata praegu aktiivseid punaseid lippe."
+  ]
+}

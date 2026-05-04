@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/dashboard",
+      "destination": "/dashboard.html"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/crawlers/run-all",
+      "schedule": "0 * * * *"
+    }
+  ]
+}

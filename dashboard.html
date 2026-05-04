@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Baltic Warning Dashboard v4.0.2</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="title-row"><h1>Baltic Warning Dashboard v4.0.2</h1><button class="help" data-help="app">?</button></div>
+        <p class="notice">Decision support dashboard: CCIR → PIR → Indicator → Collection SIR → NAI/LTIOV/Collector → Evidence → Assessment.</p>
+      </div>
+      <nav class="controls-row">
+        <button id="langEnBtn" class="button small active">EN</button><button id="langEtBtn" class="button small">ET</button>
+        <button id="resetLayoutBtn" class="button secondary">Reset layout</button>
+        <button id="refreshBtn" class="button secondary">↻ Refresh</button>
+        <button id="testSystemsBtn" class="button secondary">Test systems</button>
+        <button id="runBtn" class="button primary">Run crawlers</button>
+      </nav>
+    </header>
+
+    <section class="fixed-summary">
+      <article id="threatKpi" class="card kpi"></article>
+      <article id="ccirKpi" class="card kpi"></article>
+      <article id="pirKpi" class="card kpi"></article>
+      <article id="ltiovKpi" class="card kpi"></article>
+      <article id="systemKpi" class="card kpi"></article>
+      <article id="assessmentKpi" class="card kpi wide"></article>
+      <article id="ontologyKpi" class="card kpi ontology-mini"></article>
+    </section>
+
+    <section id="workspace" class="workspace">
+      <article id="decisionBoard" class="tile card" data-title="Decision Board">
+        <div class="tile-header"><div class="title-row"><span class="section-number">1</span><h2>Decision Board</h2><button class="help" data-help="decisionBoard">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body"><div id="decisionBoardContent"></div></div><div class="resize-corner"></div>
+      </article>
+
+      <article id="collectionWorkshop" class="tile card" data-title="Collection Workshop">
+        <div class="tile-header"><div class="title-row"><span class="section-number">2</span><h2>Collection Workshop</h2><button class="help" data-help="collectionWorkshop">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body"><div id="collectionWorkshopContent"></div></div><div class="resize-corner"></div>
+      </article>
+
+      <article id="mapPanel" class="tile card" data-title="Map Layer">
+        <div class="tile-header"><div class="title-row"><span class="section-number">3</span><h2>Map Layer</h2><button class="help" data-help="mapLayer">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body">
+          <div class="map-controls"><button id="zoomInBtn" class="button small">+</button><button id="zoomOutBtn" class="button small">−</button><button id="zoomResetBtn" class="button small">Reset</button><span id="mapHint" class="muted small"></span></div>
+          <svg id="opsMap" class="ops-map" viewBox="0 0 1000 540" role="img" aria-label="Operational base map covering EU countries and Russia"></svg>
+          <div id="mapEventList" class="map-events"></div>
+        </div><div class="resize-corner"></div>
+      </article>
+
+      <article id="timelinePanel" class="tile card" data-title="Timeline / LTIOV">
+        <div class="tile-header"><div class="title-row"><span class="section-number">4</span><h2>Timeline / LTIOV</h2><button class="help" data-help="timeline">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body"><div id="timelineContent"></div></div><div class="resize-corner"></div>
+      </article>
+
+      <article id="signalsPanel" class="tile card" data-title="Signals / Evidence">
+        <div class="tile-header"><div class="title-row"><span class="section-number">5</span><h2>Signals / Evidence</h2><button class="help" data-help="signals">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body"><div id="signalsContent"></div></div><div class="resize-corner"></div>
+      </article>
+
+      <article id="sourcesPanel" class="tile card" data-title="Sources">
+        <div class="tile-header"><div class="title-row"><span class="section-number">6</span><h2>Sources</h2><button class="help" data-help="sources">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body"><div id="sourcesContent"></div></div><div class="resize-corner"></div>
+      </article>
+
+      <article id="crawlersPanel" class="tile card" data-title="Crawlers / RSS assets">
+        <div class="tile-header"><div class="title-row"><span class="section-number">7</span><h2>Crawlers / RSS assets</h2><button class="help" data-help="crawlers">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body">
+          <div class="crawler-form"><input id="crawlerName" placeholder="Crawler name"><input id="crawlerUrl" placeholder="https://example.com/rss"><button id="addCrawlerBtn" class="button secondary">Add crawler</button></div>
+          <div id="customCrawlerList"></div>
+        </div><div class="resize-corner"></div>
+      </article>
+
+      <article id="systemPanel" class="tile card" data-title="System test / operational readiness">
+        <div class="tile-header"><div class="title-row"><span class="section-number">8</span><h2>System test / operational readiness</h2><button class="help" data-help="systemTests">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body"><div id="systemTestsContent"></div></div><div class="resize-corner"></div>
+      </article>
+
+      <article id="seriousReportsPanel" class="tile card" data-title="Serious Incident Reports">
+        <div class="tile-header"><div class="title-row"><span class="section-number">9</span><h2>Serious Incident Reports</h2><button class="help" data-help="seriousReports">?</button></div><button class="collapse-btn">−</button></div>
+        <div class="tile-body"><div id="seriousReportsContent"></div></div><div class="resize-corner"></div>
+      </article>
+    </section>
+  </main>
+
+  <button id="secretBtn" class="admin-secret">🔒 Admin secret</button>
+  <div id="helpOverlay" class="modal hidden"><div class="modal-card"><button id="helpClose" class="icon-close">×</button><h3 id="helpTitle"></h3><p id="helpText"></p></div></div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

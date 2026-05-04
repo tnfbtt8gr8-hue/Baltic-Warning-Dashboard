@@ -1,0 +1,30 @@
+[
+  {
+    "id": "preset-postimees-rss",
+    "name": "Postimees RSS",
+    "url": "https://www.postimees.ee/rss",
+    "type": "rss",
+    "active": true,
+    "createdAt": "2026-05-04T00:00:00.000Z",
+    "updatedAt": "2026-05-04T13:32:55.577Z",
+    "lastRunAt": "2026-05-04T13:32:55.577Z",
+    "lastSuccessAt": "2026-05-04T13:32:55.577Z",
+    "lastError": null,
+    "lastSignalCount": 0,
+    "status": "ok"
+  },
+  {
+    "id": "preset-delfi-rss",
+    "name": "Delfi RSS",
+    "url": "https://www.delfi.ee/rss",
+    "type": "rss",
+    "active": true,
+    "createdAt": "2026-05-04T00:00:00.000Z",
+    "updatedAt": "2026-05-04T13:32:55.584Z",
+    "lastRunAt": "2026-05-04T13:32:55.584Z",
+    "lastSuccessAt": "2026-05-04T13:32:55.584Z",
+    "lastError": null,
+    "lastSignalCount": 0,
+    "status": "ok"
+  }
+]

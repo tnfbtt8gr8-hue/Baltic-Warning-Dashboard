@@ -1,0 +1,1 @@
+const { sendJson } = require('../_lib/http'); const { bootstrapIfNeeded, getLatestAssessment } = require('../_lib/service'); module.exports = async (req, res) => { await bootstrapIfNeeded(); sendJson(res, 200, await getLatestAssessment()); };
